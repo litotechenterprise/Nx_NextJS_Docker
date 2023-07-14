@@ -5,8 +5,8 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /usr/src/app
 RUN npm install -g pnpm
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --prod
-
+RUN pnpm install
+RUN pnpm add @native-base/next-adapter next-compose-plugins next-transpile-modules native-base @react-stately/combobox @react-stately/radio @react-aria/visually-hidden @react-native-aria/checkbox @react-native-aria/button @react-native-aria/combobox @react-native-aria/focus @react-native-aria/interactions @react-native-aria/listbox @react-native-aria/overlays  @react-native-aria/radio @react-native-aria/slider @react-native-aria/tabs @react-native-aria/utils normalize-css-color
 # Production image, copy all the files and run next
 FROM docker.io/node:lts-alpine as runner
 RUN apk add --no-cache dumb-init

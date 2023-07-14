@@ -56,6 +56,9 @@ dependencies:
   next:
     specifier: 13.4.1
     version: 13.4.1(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
+  next-compose-plugins:
+    specifier: ^2.2.1
+    version: 2.2.1
   normalize-css-color:
     specifier: ^1.0.2
     version: 1.0.2
@@ -178,9 +181,6 @@ devDependencies:
   jest-environment-jsdom:
     specifier: ^29.4.1
     version: 29.4.1
-  next-compose-plugins:
-    specifier: ^2.2.1
-    version: 2.2.1
   next-fonts:
     specifier: ^1.5.1
     version: 1.5.1(webpack@5.88.1)
@@ -2331,6 +2331,7 @@ packages:
       - react-native
       - react-native-safe-area-context
       - react-native-svg
+    dev: false
 
   /@next/env@13.4.1:
     resolution: {integrity: sha512-eD6WCBMFjLFooLM19SIhSkWBHtaFrZFfg2Cxnyl3vS3DAdFRfnx5TY2RxlkuKXdIRCC0ySbtK9JXXt8qLCqzZg==}
@@ -10082,7 +10083,7 @@ packages:
 
   /next-compose-plugins@2.2.1:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
-    dev: true
+    dev: false
 
   /next-fonts@1.5.1(webpack@5.88.1):
     resolution: {integrity: sha512-pgEJ40xO1oRhM6RqhQJ9CzuZOFp6Zq+aAD/V1P9sq/wdepvLzhFxDm3lCZNoE7+78NSuMKgT6b1qeXSsqWuUMQ==}
