@@ -15,7 +15,9 @@
         "development": {
           "outputPath": "apps/web"
         },
-        "production": {}
+        "production": {
+          "generateLockfile": true
+        }
       }
     },
     "serve": {
@@ -61,6 +63,26 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/web/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "container": {
+      "executor": "@nx-tools/nx-container:build",
+      "dependsOn": ["build"],
+      "defaultConfiguration": "local",
+      "options": {
+        "engine": "docker",
+        "context": "dist/apps/web",
+        "file": "apps/web/Dockerfile"
+      },
+      "configurations": {
+        "local": {
+          "tags": ["web:latest"],
+          "push": false
+        },
+        "production": {
+          "tags": ["my.image-registry.com/web:latest"],
+          "push": true
+        }
       }
     }
   },
